@@ -1,0 +1,30 @@
+{
+	"name": "Charazay sum",
+	"version": "0.0.1",
+	"manifest_version": 2,
+	"description": "Sum of your charazay player",
+	
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_title": "Charazay sum"
+	},
+	
+	"background" : {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	
+	"content_scripts": [{
+		"matches": ["http://www.charazay.com/index.php?act=player&code=1&id=*", "https://www.charazay.com/index.php?act=player&code=1&id=*",
+					"http://www.charazay.com/index.php?act=youthplayer&code=1&id=*", "https://www.charazay.com/index.php?act=youthplayer&code=1&id=*",
+					"http://www.charazay.com/?act=player&code=1&id=*", "https://www.charazay.com/?act=player&code=1&id=*"],
+		"js": ["content.js"]
+	}],
+	
+	"permissions": [
+		"http://www.charazay.com/index.php?act=player&code=1&id=*", "https://www.charazay.com/index.php?act=player&code=1&id=*",
+		"http://www.charazay.com/index.php?act=youthplayer&code=1&id=*", "https://www.charazay.com/index.php?act=youthplayer&code=1&id=*",
+		"http://www.charazay.com/?act=player&code=1&id=*", "https://www.charazay.com/?act=player&code=1&id=*"
+	]
+	
+}
